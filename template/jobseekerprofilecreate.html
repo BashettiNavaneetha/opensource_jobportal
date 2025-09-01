@@ -1,0 +1,30 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/jobseekerprofilecreate.css' %}">
+<link rel="icon" href="{% static 'images/Logo (2).png' %}" sizes="512x512">
+{% endblock css %}
+
+{% block title %}Create Job Seeker Profile{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Create Your Job Seeker Profile</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <div class="input-group">
+            <label for="resume">Upload Resume:</label>
+            <input type="file" name="resume">
+        </div>
+
+        <div class="input-group">
+            <label for="skills">Skills:</label>
+            <textarea name="skills" required></textarea>
+        </div>
+        
+        <button type="submit">Save Profile</button>
+    </form>
+</div>
+{% endblock %}

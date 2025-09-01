@@ -1,0 +1,36 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/recruiterprofile.css' %}">
+<link rel="icon" href="{% static 'images/Logo (2).png' %}" sizes="512x512">
+{% endblock css %}
+
+{% block title %}Profile{% endblock title %}
+
+{% block content %}
+
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <h1>{{ profile.company_name }}'s Profile</h1>
+            <p><strong>Location:</strong> {{ profile.location }}</p>
+            <p><strong>Industry:</strong> {{ profile.industry }}</p>
+        </div>
+        
+        <div class="profile-body">
+            <h3>Company Website:</h3>
+            <a href="{{ profile.company_website }}" target="_blank">Visit Website</a>
+    
+            <h3>Company Description:</h3>
+            <p>{{ profile.company_description }}</p>
+        </div>
+        
+        <div class="profile-footer">
+            <a href="{% url 'job_app:edit_profile' %}" class="btn btn-warning">Edit Profile</a>
+            <a href="{% url 'job_app:home' %}" class="btn btn-secondary">Back to Home</a>
+        </div>
+    </div>
+    
+
+{% endblock %}

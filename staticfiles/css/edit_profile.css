@@ -1,0 +1,133 @@
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #eef2f7;
+    color: #333;
+}
+
+/* Centering the form container */
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+/* Profile form styling */
+.edit-profile-form {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    transition: all 0.3s ease-in-out;
+}
+
+h1 {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+/* Form groups */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Style form labels */
+form .form-group label {
+    font-weight: bold;
+    font-size: 15px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Form inputs */
+form input, 
+form select, 
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #fafafa;
+    transition: border 0.3s ease-in-out;
+}
+
+form input:focus, 
+form select:focus, 
+form textarea:focus {
+    border-color: #28a745;
+    outline: none;
+    background-color: #fff;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    transition: background 0.3s ease-in-out;
+    border: none;
+}
+
+/* Save Button */
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+/* Cancel Button */
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

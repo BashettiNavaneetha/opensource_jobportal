@@ -1,0 +1,45 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+
+{% block title %}Home{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="icon" href="{% static 'images/Logo (2).png' %}" sizes="512x512">
+{% endblock css %}
+
+{% block content %}
+<div class="main-wrapper">
+    <div class="container">
+        <div class="text-content">
+            <h1>Join Us to Build Your Career</h1>
+            <p>Explore job opportunities, apply to top companies, and take the next step in your career journey.</p>
+            <a href="{% url 'job_app:job_updates' %}" class="cta-button">Explore Jobs</a>
+        </div>
+        <div class="image-content">
+            <img src="{% static 'images/Custom.jpg' %}" alt="Career Growth">
+        </div>
+    </div>
+    <div class="container2">
+        <h2>Selected candidates from our website</h2>
+        <marquee behavior="" direction="">
+         
+            <div class="candidates">
+                {% for i in data %}
+                <div class="candidate-card">
+                    {% if i.profile_pic %}
+                        <img src="{{ i.profile_pic.url }}" alt="{{ i.name }}'s Profile Image">
+                    {% else %}
+                        <img src="{% static 'images/default_profile.png' %}" alt="Default Profile Image">
+                    {% endif %}
+                    <p class="name">{{ i.name }}</p>
+                    <p class="company">{{ i.company_name }}</p>
+                </div>
+                
+                {% endfor %}
+            </div>
+        </marquee>
+    </div>
+</div>   
+{% endblock %}

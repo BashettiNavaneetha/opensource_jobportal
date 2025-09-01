@@ -1,0 +1,63 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block title %}Job Details{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/job_detail.css' %}">
+<link rel="icon" href="{% static 'images/Logo (2).png' %}" sizes="512x512">
+{% endblock css %}
+
+{% block content %}
+<div class="job-details-container">
+    <div class="job-details-card">
+        <h2 class="job-title">{{ job.title }}</h2>
+        <div class="company-info">
+            <h3>Company: {{ job.recruiter.recruiterprofile.company_name }}</h3>
+            <p>Location: {{ job.location }}</p>
+            <p>Posted on: {{ job.posted_on|date:"d M Y" }}</p>
+        </div>
+        <div class="job-description">
+            <h3>Job Description</h3>
+            <p>{{ job.description }}</p>  <!-- This will display the job description as per the job posted -->
+        </div>
+        
+        <!-- You can also add more structured sections like this if your description is more complex -->
+       
+        <div class="job-responsibilities">
+            <h4>Responsibilities:</h4>
+            <ul>
+                <li>{{ job.responsibilities }}</li>
+            </ul>
+        </div>
+        
+        <div class="job-requirements">
+            <h4>Requirements:</h4>
+            <ul>
+                <li>{{ job.requirements }}</li>
+                
+            </ul>
+        </div>
+        <div class="job-qualifications">
+            <h4>Qualifications:</h4>
+            <ul>
+                <li>{{ job.qualification }}</li>
+                
+            </ul>
+        </div>
+        <div class="job-skills">
+            <h4>Skills:</h4>
+            <ul>
+                <li>{{ job.skills }}</li>
+            </ul>
+        </div>
+        
+        <div class="salary-info">
+            <p><strong>Salary:</strong> {{ job.salary }}</p>
+        </div>
+        <div class="apply-button">
+            <a href="{{ job.apply_link }}" target="_blank" class="apply-btn">Apply Now</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

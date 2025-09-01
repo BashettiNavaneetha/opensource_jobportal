@@ -1,0 +1,101 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 80%;
+    width: 100%;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-top: 80px;
+    margin-left: 150px;
+    
+}
+
+.card {
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.subheading {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.job-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+.form-group input, 
+.form-group textarea, 
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus, 
+.form-group select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.form-group select[multiple] {
+    height: 100px;
+    overflow-y: auto;
+}
+.btn-primary {
+    width: 100%;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0056b3, #003f80);
+}
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+    }
+}
+
+

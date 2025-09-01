@@ -1,0 +1,189 @@
+
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    overflow-x: hidden;
+}
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content */
+    width: 100%;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px;
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    color: white;
+    border-radius: 15px;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 1200px;
+    margin-bottom: 40px;
+    height: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-out forwards;
+    margin-top: 140px;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text-content {
+    width: 50%;
+    animation: slideInLeft 1s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.text-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.text-content p {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 14px 30px;
+    background-color: #ff5722;
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    background-color: #e64a19;
+    transform: scale(1.1);
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.3);
+}
+
+.image-content {
+    animation: slideInRight 1s ease-out;
+    width: 60%;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.image-content img {
+    max-width: 5000px;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-content img:hover {
+    transform: scale(1.10);
+}
+/* Selected Candidates Section */
+.container2 {
+    text-align: center;
+    /* background: white; */
+    padding: 50px;
+    border-radius: 15px;
+    margin: 40px auto;
+    width: 90%;
+    height: 320px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    max-width: 1200px;
+    margin-bottom: 40px;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-out 0.5s forwards;
+}
+
+.container2 h2 {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+marquee {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+.candidates {
+    display: flex;
+    gap: 25px;
+}
+
+.candidate-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 200px;
+    height: 180px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.candidate-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.3);
+}
+
+.candidate-card img {
+    width: 120px;
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 12px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.candidate-card:hover img {
+    transform: scale(1.1);
+}
+
+.name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #007bff;
+}
+
+.company {
+    font-size: 1rem;
+    color: #555;
+}
+

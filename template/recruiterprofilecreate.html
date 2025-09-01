@@ -1,0 +1,42 @@
+{% extends 'navbar.html' %}
+
+{% block title %}Create Recruiter Profile{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/recruiterprofilecreate.css' %}">
+<link rel="icon" href="{% static 'images/Logo (2).png' %}" sizes="512x512">
+{% endblock css %}
+
+{% block content %}
+
+<div class="container">
+    <h2>Create Your Recruiter Profile</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="input-group">
+            <label for="company_name">Company Name:</label>
+            <input type="text" name="company_name" required>
+        </div>
+        <div class="input-group">
+            <label for="company_website">Company Website:</label>
+            <input type="url" name="company_website" required>
+        </div>
+        <div class="input-group">
+            <label for="company_description">Company Description:</label>
+            <textarea name="company_description" rows="3" required></textarea>
+        </div>
+        <div class="input-group">
+            <label for="location">Location:</label>
+            <input type="text" name="location" required>
+        </div>
+        <div class="input-group">
+            <label for="industry">Industry:</label>
+            <input type="text" name="industry" required>
+        </div>
+        <button type="submit">Save Profile</button>
+    </form>
+</div>
+{% endblock %}
+
+
+ 

@@ -1,0 +1,79 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block title %}PostJob{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/postjob.css' %}">
+<link rel="icon" href="{% static 'images/Logo (2).png' %}" sizes="512x512">
+{% endblock css %}
+
+{% block content %}
+
+<div class="container">
+    
+    <div class="card">
+        <h2>Post a New Job</h2>
+        <p class="subheading">Fill in the details to post a job listing.</p>
+        
+        <form method="post" class="job-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="title">Job Title</label>
+                <input type="text" name="title" placeholder="Enter job title" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Job Description</label>
+                <textarea name="description" rows="4" placeholder="Describe the job role" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="responsibilities">Responsibilities</label>
+                <textarea name="responsibilities" rows="4" placeholder="Enter responsibilities, separated by commas" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="requirements">Requirements</label>
+                <textarea name="requirements" rows="4" placeholder="Enter requirements, separated by commas" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="skills">Skills</label>
+                <textarea name="skills" rows="4" placeholder="Enter Skills" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="qualification">Qualification</label>
+                <input type="text" name="qualification" placeholder="Enter Qualification" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="location">Job Location</label>
+                <input type="text" name="location" placeholder="City, State" required>
+            </div>
+
+            <div class="form-group">
+                <label for="salary">Salary Range</label>
+                <input type="text" name="salary" placeholder="E.g. ₹50,00,000 - ₹70,00,000" required>
+            </div>
+            <div class="form-group">
+                <label for="experience_level">Experience Level</label>
+                <select name="experience_level" required>
+                    <option value="Fresher">Fresher</option>
+                    <option value="Experienced">Experienced</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="experience_range">Experience Range</label>
+                <input type="text" name="experience_range" placeholder="E.g. 1-3 years" required>
+            </div>
+            <div class="form-group">
+                <label for="apply_link">Company Career Page Link</label>
+                <input type="url" name="apply_link" placeholder="Enter career site URL" required>
+            </div>
+            
+            <button type="submit" class="btn-primary">Post Job</button>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

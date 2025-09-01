@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Home{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="icon" href="{% static 'images/Logo (2).png' %}" sizes="512x512">
+    <script src="{% static 'js/navbar.js' %}"></script>
+    {% block css %}
+    {% endblock css %}
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'job_app:home' %}">Home</a></li>
+
+            {% if request.user.is_authenticated %}
+                {% if request.user.is_recruiter %}
+                    <li><a href="{% url 'job_app:profile' %}">Profile</a></li>
+                    <li><a href="{% url 'job_app:post_job' %}">Post Job</a></li>
+                {% else %}
+                    <li><a href="{% url 'job_app:job_updates' %}">Job Updates</a></li>
+                    <li><a href="{% url 'job_app:profile' %}">Profile</a></li>
+                {% endif %}
+                <li><a href="{% url 'job_app:logout' %}">Logout</a></li>
+            {% else %}
+                <li><a href="{% url 'job_app:login' %}">Login</a></li>
+                <li><a href="{% url 'job_app:signup' %}">Signup</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main> 
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 Job Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+</body>
+</html>
+

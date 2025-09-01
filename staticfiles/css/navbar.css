@@ -1,0 +1,99 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+nav {
+    background: linear-gradient(135deg, #141e30, #243b55);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 15px 0;
+    z-index: 1000;
+    transition: 0.3s ease-in-out;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav ul li {
+    margin: 0 20px;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    background: #00c6ff;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.4s ease-in-out;
+}
+
+nav ul li a:hover::before {
+    width: 100%;
+}
+nav ul li a:hover {
+    color: #00c6ff;
+    transform: scale(1.1);
+    text-shadow: 0 0 10px #00c6ff, 0 0 20px #00c6ff;
+}
+nav ul li a.active {
+    color: #00c6ff;
+}
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        background: rgba(20, 30, 48, 0.9);
+        position: absolute;
+        top: 60px;
+        width: 100%;
+        left: 0;
+        display: none;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul.show {
+        display: block;
+    }
+}
+
+nav.scrolled {
+    background: rgba(20, 30, 48, 0.95);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+}
+
+
+footer {
+    background: #1c1c1c;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+}
