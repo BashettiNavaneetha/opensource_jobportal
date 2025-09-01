@@ -50,24 +50,24 @@ Recruiters can post jobs, manage company profiles, and track applications, while
    ```bash
    git clone https://github.com/YourUsername/opensource_jobportal.git
    cd opensource_jobportal
-2. Create a virtual environment
+2. **Create a virtual environment :** 
   python -m venv env
   source env/bin/activate   # Linux/Mac
   env\Scripts\activate      # Windows
 
-3. Install Dependencies
+3. **Install Dependencies:**
    pip install -r requirements.txt
 
-4. Apply migrations
+4. **Apply migrations:**
    python manage.py migrate
 
-5. Create superuser
+5. **Create superuser:**
    python manage.py createsuperuser
 
-6. Run the development server
+6. **Run the development server:**
    python manage.py runserver
 
-7. Open browser and visit: http://127.0.0.1:8000/
+7. **Open browser and visit:** http://127.0.0.1:8000/
 ---
 
 
